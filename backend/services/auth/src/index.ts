@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import { connectDB } from "./configs/db.js";
 
 
 dotenv.config();
@@ -18,4 +19,5 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Auth Service is running on port ${PORT}`)
+  connectDB();
 });
